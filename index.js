@@ -8,10 +8,9 @@ const io = new Server(server);
 
 // Handle Sockets
 io.on('connection', (socket) => {
-  //   console.log('A new user has connected', socket.id);
-  socket.on('user-message', (message) => {
-    // console.log('A New User Message', message);
-    io.emit('message', message);
+  console.log('A new user has connected', socket.id);
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
   });
 });
 
